@@ -8,13 +8,13 @@ gamma=9.12;
 p1=0.17;
 p2=0.55*10^(-5);
 p3=11.9*10^(-7); 
-r=0.045;
+r=0.032;
 d0=(1.032*10^5);
 mu2=9.12;
 k=10^9;
 m=1*2395/365;
 %Initial conditions
-Initial=[ 0 1*10^8 8*10^6 ]; 
+Initial=[ 0 1*10^8 1*10^3 ]; 
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 %time of simulation:
