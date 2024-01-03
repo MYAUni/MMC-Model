@@ -5,7 +5,7 @@ gamma=9.12;
 p1=0.12;
 p2=0.55*10^(-5);
 p3=11.9*10^(-7); 
-r=0.045;
+r=0.032;
 d0=1*(1.032*10^5);
 mu2=9.12;
 k=10^9;
@@ -13,7 +13,7 @@ a=100;
 %Initial conditions
 
 %Case1
-Initial=[ 0 2.66*10^7 8*10^6 ];
+Initial=[ 0 1.22*10^7 1*10^3 ];
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
@@ -49,7 +49,7 @@ hold on
 %Case 2
 
 tspan1 =[0,600];
-Initial=[ 0 2.67*10^7 8*10^6 ]; %Simulations for proposal: [ 0 3.7*10^7 1*10^7 ];
+Initial=[ 0 1.21*10^7 1*10^3 ]; %Simulations for proposal: [ 0 3.7*10^7 1*10^7 ];
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
@@ -69,7 +69,7 @@ legend('$T(0)=2.67\times10^{7}$')
 %Case 3:
 hold on 
 tspan1 =[0,600];
-Initial=[ 0 2.68*10^7 8*10^6 ]; 
+Initial=[ 0 1.2*10^7 1*10^3 ]; 
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
