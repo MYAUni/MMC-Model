@@ -5,7 +5,7 @@ gamma=9.12;
 p1=0.12;
 p2=0.55*10^(-5);
 p3=11.9*10^(-7); 
-r=0.045;
+r=0.032;
 d0=1*(1.032*10^5);
 mu2=9.12;
 k=10^9;
@@ -13,7 +13,7 @@ a=100;
 %Initial conditions
 
 %Case1
-Initial=[ 0 2.95*10^7 8*10^6 ];
+Initial=[ 0 2.15*10^7 1*10^3 ];
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
@@ -28,12 +28,12 @@ m=2994/365;
 
 semilogy(t,y(:,2))
 s=semilogy(t,y(:,2));
-set(s,'linewidth',4);
+set(s,'linewidth',5);
 s(1).Color= [0.5 0 0.8];
 xlim([0 600])
-ylim([0 5*10^9])
+ylim([0 3*10^7])
 set(gca,'YminorTick','off')
-yticks([ 0 10 10^3 10^5 10^7 10^9 ])
+yticks([ 0  1*10^7 2*10^7  3*10^7 4*10^7])
 
 legend('$T(0)=2.95\times10^{7}$')
 xlabel('Time (Days)')
@@ -49,7 +49,7 @@ hold on
 %Case 2
 
 tspan1 =[0,600];
-Initial=[ 0 2.96*10^7 8*10^6 ]; %Simulations for proposal: [ 0 3.7*10^7 1*10^7 ];
+Initial=[ 0 2.14*10^7 1*10^3 ]; %Simulations for proposal: [ 0 3.7*10^7 1*10^7 ];
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
@@ -59,7 +59,7 @@ opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
 semilogy(t,y(:,2))
 s=semilogy(t,y(:,2));
-set(s,'linewidth',4);
+set(s,'linewidth',5);
 s(1).Color= [0.6350 0.0780 0.1840];
 legend('$T(0)=2.96\times10^{7}$')
 
@@ -69,7 +69,7 @@ legend('$T(0)=2.96\times10^{7}$')
 %Case 3:
 hold on 
 tspan1 =[0,600];
-Initial=[ 0 2.97*10^7 8*10^6 ]; 
+Initial=[ 0 2.13*10^7 1*10^3 ]; 
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
@@ -78,7 +78,7 @@ opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
 semilogy(t,y(:,2))
 s=semilogy(t,y(:,2));
-set(s,'linewidth',4);
+set(s,'linewidth',5);
 s(1).Color= [0 .7 .7];
 legend('$T(0)=2.97\times10^{7}$')
 
@@ -93,7 +93,6 @@ M=y(1);
 T=y(2);
 E=y(3);
 dydt = [ -mu1*M+m;
-  -T*p1*M/(M+a)+r*T*(1-T/k)-T*(p2*E); %0.95*
-  gamma*(p1*T*M/(M+a))+E*(-mu2)+d0-p3*E*T];%-p5*R*(D+E)/7
-%*(1-E/10^9)
+  -T*p1*M/(M+a)+r*T*(1-T/k)-T*(p2*E); 
+  gamma*(p1*T*M/(M+a))+E*(-mu2)+d0-p3*E*T];
 end
