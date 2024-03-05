@@ -14,7 +14,7 @@ mu2=9.12;
 k=10^9;
 m=1*2395/365;
 %Initial conditions
-Initial=[ 0 1*10^8 1*10^3 ]; 
+Initial=[ 0 1*10^8 d0/mu2 ]; 
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 %time of simulation:
