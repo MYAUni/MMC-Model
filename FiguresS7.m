@@ -13,7 +13,7 @@ a=100;
 %Initial conditions
 
 %Case1
-Initial=[ 0 1.22*10^7 1*10^3 ];
+Initial=[ 0 1.22*10^7 d0/mu2 ];
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
