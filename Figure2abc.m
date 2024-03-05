@@ -12,7 +12,8 @@ a=100;
 m=1*2395/365;
 mu1=21.05;
 %Initial conditions:
-Initial=[ 0 8*10^7 1*10^3 ]; %For other scenarios: Initial(2)=4*10^6,  Initial(2)=1*10^7 
+Initial=[ 0 6.62*10^7 1*10^3 ]; %All scenarios: small- Initial(2)=5.3*10^6,
+% Medium- Initial(2)=1*10^7 , Large Initial(2)=6.62*10^7  
 y0 = Initial;
 opt = odeset('AbsTol',1e-9,'RelTol',1e-6);
 
